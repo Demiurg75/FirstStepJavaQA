@@ -2,9 +2,14 @@ package firstStep;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class ConfProperties {
     protected static FileInputStream fileInputStream;
     protected static Properties PROPERTIES;
+    private static Logger log ;
+
     static {
         try {
             //указание пути до файла с настройками

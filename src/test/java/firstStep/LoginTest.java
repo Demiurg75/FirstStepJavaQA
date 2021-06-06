@@ -3,7 +3,10 @@ package firstStep;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.LogManager;
 
 import org.junit.Test;
 import  org.openqa.selenium.WebDriver;

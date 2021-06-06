@@ -9,12 +9,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.logging.Logger;
+
 public class LoginPage {
 
     /**
      * конструктор класса, занимающийся инициализацией полей класса
      */
     public WebDriver driver;
+    private static Logger log = Logger.getLogger(LoginPage.class.getName());
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
@@ -33,6 +36,7 @@ public class LoginPage {
 
     //Ввод логина
     public void inputLogin(String login) {
+        log.info("Ввод логина");
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbar_username")));
         loginField.sendKeys(login);
@@ -40,6 +44,7 @@ public class LoginPage {
 
     //Ввод пароля
     public void inputPasswd(String passwd) {
+        log.info("Ввод пароля");
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("navbar_password")));
         passwordField.sendKeys(passwd);
@@ -47,5 +52,6 @@ public class LoginPage {
 
     //клик по кнопке "Вход"
     public void clickLoginBtn() {
+        log.info("клик по кнопке \"Вход\"");
         submitButton.click(); }
 }
